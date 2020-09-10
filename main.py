@@ -35,12 +35,12 @@ for i in range(numberTimesToRepeat-1):
 graph = [[], []]
 means.sort()
 for i in range(len(means)):
-    means[i] = round(means[i], 1)
+    means[i] = round(means[i]*10)/10
 currentValue = means[0]
 graph[0].append(str(currentValue))
 graph[1].append(1)
 for i in range(len(means)):
-    if int(means[i]) == int(currentValue):
+    if means[i] == currentValue:
         graph[1][len(graph[1])-1] += 1
     else:
         currentValue = means[i]
