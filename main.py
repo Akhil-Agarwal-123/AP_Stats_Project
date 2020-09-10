@@ -11,13 +11,16 @@ def inArr(theData, newData):
     return False
 
 
-sampleSize = int(input("Please enter the sample size: "))
-numberTimesToRepeat = int(input("Please enter the number of times you want this to repeat: "))
-means = []
+print("Welcome! Please enter the parameters below when prompted. This program will take a random sample of data from the data set in data.txt and find the mean. This will be repeated to form a bar graph.")
 file = []
 f = open("data.txt", "r")
 for x in f:
     file.append(int(x))
+sampleSize = int(input("Please enter the sample size: "))
+while sampleSize > len(file):
+    sampleSize = int(input("\nPlease try again. Your sample size is larger than the amount of data: "))
+numberTimesToRepeat = int(input("\nPlease enter the number of times you want this to repeat: "))
+means = []
 
 for i in range(numberTimesToRepeat-1):
     currentTotal = 0
